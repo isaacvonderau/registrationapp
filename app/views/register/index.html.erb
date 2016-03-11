@@ -1,0 +1,38 @@
+<!-- Story: As an internet user, I can go to the registration from and register, which will take me to a confirmation page.
+Hint: Use POST for the form
+Hint: Phone numbers should only be stored if they are provided, so use a separate database table for them; which implies that phone numbers are not part of the table containing the rest of the information.
+Hint: Empty input fields should be stored as NULL in the database. -->
+<h1>Go Ahead and Register,<br> Guy!</h1>
+<form method="post" action="/register/create">
+  First Name:<br>
+  <input type="text" name="first_name"><br>
+  Last Name:<br>
+  <input type="text" name="last_name"><br>
+  Street Address:<br>
+  <input type="text" name="street_address"><br>
+  City:<br>
+  <input type="text" name="city"><br>
+  State:<br>
+  <input type="text" name="state"><br>
+  Postal Code:<br>
+  <input type="text" name="postal_code"><br>
+  Country:<br>
+  <input type="text" name="country"><br>
+  Home Phone:<br>
+  <input type="text" name="phone1"><br>
+  Cell Phone:<br>
+  <input type="text" name="phone2"><br>
+  Work Phone:<br>
+  <input type="text" name="phone3"><br>
+  e-mail:<br>
+  <input type="text" name="email_address"><br>
+  *User Name:<br>
+  <input type="text" name="user_name" required><br>
+  *Password:<br>
+  <input type="password" name="password" required><br>
+  <input type="submit" value="Register"\>
+</form>
+<h3>* required</h3>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
