@@ -2,7 +2,7 @@
 Hint: Use POST for the form
 Hint: Phone numbers should only be stored if they are provided, so use a separate database table for them; which implies that phone numbers are not part of the table containing the rest of the information.
 Hint: Empty input fields should be stored as NULL in the database. -->
-<h1>Go Ahead and Register,<br> Guy!</h1>
+<h1 id= "title">Log In Simulator<br> Experience all the excitement of logging in</h1>
 <form method="post" action="/register/create">
   First Name:<br>
   <input type="text" name="first_name"><br>
@@ -30,8 +30,9 @@ Hint: Empty input fields should be stored as NULL in the database. -->
   <input type="text" name="user_name" required><br>
   *Password:<br>
   <input type="password" name="password" required><br>
-  <input type="submit" value="Register"\>
+  <input type="submit" value="Register">
 </form>
+<a href="/login"><button>Log in</button></a>
 <h3>* required</h3>
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>

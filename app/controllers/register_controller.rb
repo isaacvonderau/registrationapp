@@ -24,7 +24,6 @@ class RegisterController < ApplicationController
       user.email_address = params[:email_address].strip
       user.save
 
-
       # save phone numbers to phone database
       phone = Phone.new
       phone.phone1 = params[:phone1]

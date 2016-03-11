@@ -10,27 +10,19 @@ class LoginController < ApplicationController
 
     if (params.has_key?(:user_name) && !params[:user_name].strip.empty?) ||     (params.has_key?(:password) && !params[:password].strip.empty?)
       users = User.where("user_name = ? and password = ?", params[:user_name], params[:password])
-      
-
 
       if  users.length == 1
         @user_name = params[:user_name]
         @user = User.find_by_user_name(params[:user_name])
         @phones = Phone.find_by_user_name(params[:user_name])
         render "info.html.erb"
-
-
       else
         flash[:notice] = "Log in Failed"
-        render "login.html.erb"
-
+        redirect_to '/login'
+        # render "login.html.erb"
       end
-
     end
-
   end # end of submit
-
-
 
 end # end of class
 

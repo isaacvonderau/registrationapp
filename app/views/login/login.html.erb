@@ -1,11 +1,12 @@
-<h1>Log In</h1>
+<h1 id= "h1">Log In</h1>
 <form method="post" action="/login/submit">
   User Name: <br>
   <input type="text" name="user_name" required> <br>
   Password: <br>
   <input type="password" name="password" required> <br>
-  <input type="submit" value="Login">
+  <input type="submit" value="Log in">
 </form>
+<a href='/'><button>Register</button></a>
 <% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
 <% end %>
